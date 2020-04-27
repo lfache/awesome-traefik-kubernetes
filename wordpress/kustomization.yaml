@@ -1,0 +1,16 @@
+secretGenerator:
+- name: mysql-db
+  literals:
+  - database=Div2Cremdeolv
+- name: mysql-usr
+  literals:
+  - user=nocus0OcOr
+- name: mysql-pass
+  literals:
+  - password=2GleathDuct
+resources:
+- mysql-deployment.yaml
+- wordpress-deployment.yaml
+- wordpress-ingressroute.yaml
+- wordpress-headers.yaml
+- wordpress-ipwhitelist.yaml

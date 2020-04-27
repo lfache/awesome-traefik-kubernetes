@@ -1,0 +1,21 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: Middleware
+metadata:
+  name: wp-headers
+spec:
+  headers:
+    frameDeny: true
+    contentTypeNosniff: true
+    browserXssFilter: true
+    #HSTS
+    forceSTSHeader: true
+    stsIncludeSubdomains: true
+    stsSeconds: 31536000
+    # remove Server and X-Powered-By headers
+    customResponseHeaders:
+      Server: ''
+      X-Powered-By: ''
+    # add some sec headers
+    contentSecurityPolicy: "default-src 'self' data: ; script-src 'self' 'unsafe-inline' ; style-src 'self' 'unsafe-inline' fonts.googleapis.com https://code.jquery.com ; font-src 'self' fonts.gstatic.com data: ; img-src 'self' data: https://code.jquery.com"
+    referrerPolicy: "same-origin"
+    featurePolicy: "vibrate 'self'; geolocation 'self'; midi 'self'; notifications 'self'; push 'self'; microphone 'none'; camera 'none'; magnetometer 'none'; gyroscope 'none'; speaker 'none'; vibrate 'self'; fullscreen 'self'"
