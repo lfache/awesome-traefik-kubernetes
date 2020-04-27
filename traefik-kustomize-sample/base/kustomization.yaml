@@ -1,0 +1,5 @@
+resources:
+- traefik-rbac.yaml
+- traefik-configmap.yaml
+- traefik-service.yaml
+- traefik-deployment.yaml

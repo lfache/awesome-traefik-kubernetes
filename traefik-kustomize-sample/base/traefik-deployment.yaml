@@ -1,0 +1,39 @@
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  namespace: default
+  name: traefik-ingress-controller
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: default
+  name: traefik
+  labels:
+    app: traefik
+
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: traefik
+  template:
+    metadata:
+      labels:
+        app: traefik
+    spec:
+      serviceAccountName: traefik-ingress-controller
+      containers:
+        - name: traefik
+          image: traefik:v2.2
+          imagePullPolicy: Always
+          volumeMounts:
+            - name: traefik-config-static
+              mountPath: /etc/traefik/
+          ports:
+            - name: web
+              containerPort: 80
+      volumes:
+        - name: traefik-config-static
+          configMap:
+            name: traefik-config-static

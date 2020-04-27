@@ -1,0 +1,6 @@
+bases:
+- ../base
+patches:
+- traefik-configmap.yaml
+- traefik-deployment.yaml
+- traefik-service.yaml

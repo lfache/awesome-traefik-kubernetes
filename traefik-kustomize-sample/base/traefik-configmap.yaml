@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: traefik-config-static
+  namespace: default
+  labels:
+    app: traefik
+data:
+  traefik.yml: |
+    entryPoints:
+      web:
+        address: :80
+      
+    providers:
+      kubernetesCRD: {} 
