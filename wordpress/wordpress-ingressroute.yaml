@@ -6,7 +6,7 @@ spec:
   entryPoints:
     - websecure
   routes:
-  - match: Host(`try.dubarbu.fr`)
+  - match: Host(`wordpress.mydomain.com`)
     kind: Rule
     services:
     - name: wordpress
@@ -14,7 +14,7 @@ spec:
     middlewares:
       - name: wp-headers
 
-  - match: Host(`try.dubarbu.fr`) && (Path(`/wp-admin`)|| Path(`/wp-login.php`))
+  - match: Host(`wordpress.mydomain.com`) && (Path(`/wp-admin`)|| Path(`/wp-login.php`))
     kind: Rule
     services:
     - name: wordpress
