@@ -1,13 +1,13 @@
 secretGenerator:
 - name: mysql-db
   literals:
-  - database=Div2Cremdeolv
+  - database=YOUR_DATABASE
 - name: mysql-usr
   literals:
-  - user=nocus0OcOr
+  - user=YOUR_USER
 - name: mysql-pass
   literals:
-  - password=2GleathDuct
+  - password=YOUR_PASSWORD
 resources:
 - mysql-deployment.yaml
 - wordpress-deployment.yaml
