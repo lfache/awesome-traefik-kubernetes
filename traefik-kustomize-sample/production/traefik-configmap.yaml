@@ -28,9 +28,6 @@ data:
     providers:
       kubernetesCRD: {} 
 
-    api:
-      insecure: true
-      
     certificatesResolvers:
       myresolver:
         acme:

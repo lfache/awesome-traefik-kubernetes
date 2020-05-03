@@ -8,9 +8,6 @@ spec:
     - protocol: TCP
       name: websecure
       port: 443
-    - protocol: TCP
-      name: admin
-      port: 8080
   type: LoadBalancer
   selector:
     app: traefik

@@ -21,8 +21,6 @@ spec:
           ports:
             - name: websecure
               containerPort: 443
-            - name: admin
-              containerPort: 8080
           volumeMounts:
             - name: traefik-persistent-storage
               mountPath: /letsencrypt
