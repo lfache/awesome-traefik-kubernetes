@@ -1,0 +1,14 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: ingressroutetls-portainer
+  namespace: portainer
+spec:
+  entryPoints:
+    - websecure
+  routes:
+  - match: Host(`portainer.mydomain.com`)
+    kind: Rule
+    services:
+    - name: portainer
+      port: 9000
