@@ -1,8 +1,8 @@
-bases:
-- ../base
 resources:
 - traefik-volumeclaim.yaml
 - traefik-tls.yaml
+bases:
+- ../base
 patches:
 - traefik-configmap.yaml
 - traefik-deployment.yaml
